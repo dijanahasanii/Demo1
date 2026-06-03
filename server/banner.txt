@@ -1,0 +1,1 @@
+SecureBank API — demo banner (read via sync fs in /api/auth/banner)

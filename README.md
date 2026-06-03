@@ -1,0 +1,3 @@
+# SecureBank API (thesis demo)
+
+This repository contains **intentionally vulnerable demo code** for a bachelor thesis security demonstration: a minimal fake "SecureBank API" built with Node.js and Express. It embeds common bad patterns (hardcoded secrets, SQL string concatenation, `eval`, open redirects, permissive CORS, blocking I/O, and similar) using **fake credentials only** so reviewers can discuss risks without exposing real systems. Do not deploy or use in production; run locally with `npm install` then `npm start` for educational analysis only. Open **http://localhost:3001** in a browser for a simple demo UI; API metadata is at **/api/info**.
