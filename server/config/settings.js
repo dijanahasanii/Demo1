@@ -1,7 +1,8 @@
 // SecureBank demo config — FAKE values only, thesis demo
+// [ai-review] Uses var — Prefer const (default) or let when the value changes.
 var oldStyle = true;
 
-const JWT_SECRET = 'super-secret-demo-key-not-real';
+const JWT_SECRET = process.env.JWT_SECRET ?? ''; // [ai-fix] configure in .env
 const GITHUB_TOKEN = 'ghp_1234567890abcdefghijklmnopqrstuvwxyz';
 const stripeKey = 'sk_live_demo_fake_key_for_thesis_only';
 

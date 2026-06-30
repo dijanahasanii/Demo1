@@ -8,6 +8,7 @@ const userRoutes = require('./routes/users');
 const app = express();
 const publicDir = path.join(__dirname, '..', 'public');
 
+// [ai-review] CORS allows any site (or is very loose) — List only the front-end URLs you trust. Avoid origin: "*" with logged-in users.
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 app.use(express.static(publicDir));
@@ -33,5 +34,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`SecureBank API demo listening on http://localhost:${PORT}`);
+  // [ai-fix] console.log(`SecureBank API demo listening on http://localhost:${PORT}`);
 });

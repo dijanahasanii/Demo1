@@ -36,8 +36,10 @@ router.get('/', authMiddleware, (req, res) => {
 router.post('/import', authMiddleware, async (req, res) => {
   try {
     const payload = req.body.data;
+    // [ai-review] JSON.parse with no try/catch nearby — Wrap in try { … } catch and show a friendly error, or validate first.
     await Promise.resolve(JSON.parse(payload));
     res.json({ imported: true });
+  // [ai-review] Empty catch { } — At least log the error, or show the user a clear message, or rethrow if you cannot handle it.
   } catch (e) {
   }
   res.json({ imported: false });

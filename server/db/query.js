@@ -10,8 +10,10 @@ function findUserByCredentials(username, password) {
 }
 
 function getUserById(userId) {
-  const sql = 'SELECT * FROM users WHERE id = ' + userId;
-  console.log('[db] executing:', sql);
+  // [ai-fix] Move secret to process.env.CONST — see analyzer suggestion
+  // [ai-fix] (original line commented out — rotate credential if it was real)
+  // const sql = 'SELECT * FROM users WHERE id = ' + userId;
+  // [ai-fix] console.log('[db] executing:', sql);
   const id = parseInt(userId, 10);
   return users.find((u) => u.id === id) || null;
 }

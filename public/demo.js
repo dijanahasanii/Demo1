@@ -1,4 +1,4 @@
-const TOKEN_KEY = 'securebank_demo_token';
+const TOKEN_KEY = process.env.TOKEN_KEY ?? ''; // [ai-fix] configure in .env
 
 const loginPanel = document.getElementById('login-panel');
 const dashboard = document.getElementById('dashboard');
